@@ -20,23 +20,23 @@ const REPORTS_DATA = [
       {
         id: "ventas-mensual",
         name: "Ventas Mensual",
-        url: "https://app.powerbi.com/view?r=TU_LINK_AQUI"
+        url: "https://app.powerbi.com/view?r=eyJrIjoiNzI5MjNkNTUtYjQzMS00NGM2LWJmZjMtNzcxNjU4ZmMyNzYwIiwidCI6ImM3ZGQ3YzhiLTk5YmYtNDdlOS1iNTlhLTgwNzE3MmQ5MTg0YSJ9"
       },
       {
-        id: "ventas-por-region",
-        name: "Ventas por Región",
-        url: "https://app.powerbi.com/view?r=TU_LINK_AQUI"
+        id: "los-tios",
+        name: "Los Tíos",
+        url: "https://app.powerbi.com/view?r=eyJrIjoiMDI2YTczYmQtNTZlMS00MGMwLWFhMDItMDJkY2Y2Yzg1NjAxIiwidCI6ImM3ZGQ3YzhiLTk5YmYtNDdlOS1iNTlhLTgwNzE3MmQ5MTg0YSJ9"
       }
     ]
   },
   {
-    category: "Finanzas",
+    category: "SANA",
     icon: "💰",
     reports: [
       {
-        id: "flujo-de-caja",
-        name: "Flujo de Caja",
-        url: "https://app.powerbi.com/view?r=TU_LINK_AQUI"
+        id: "atenciones",
+        name: "Atenciones",
+        url: "https://app.powerbi.com/view?r=eyJrIjoiZGM1MTZjN2ItYzA0OS00ODBmLTg5ZGYtYjU0MDQyNTUwOWQ3IiwidCI6ImM3ZGQ3YzhiLTk5YmYtNDdlOS1iNTlhLTgwNzE3MmQ5MTg0YSJ9"
       },
       {
         id: "presupuesto-vs-real",
@@ -46,13 +46,13 @@ const REPORTS_DATA = [
     ]
   },
   {
-    category: "Operaciones",
+    category: "Ejemplos",
     icon: "⚙️",
     reports: [
       {
-        id: "kpis-operativos",
-        name: "KPIs Operativos",
-        url: "https://app.powerbi.com/view?r=TU_LINK_AQUI"
+        id: "ejemplos-covid",
+        name: "COVID-19",
+        url: "https://app.powerbi.com/view?r=eyJrIjoiOTcxZDhjYmEtMWRhNC00YWQ3LWJjMWQtZDMyYjZhOTlmZWI1IiwidCI6ImM3ZGQ3YzhiLTk5YmYtNDdlOS1iNTlhLTgwNzE3MmQ5MTg0YSJ9"
       }
     ]
   }
