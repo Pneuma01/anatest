@@ -1,10 +1,5 @@
 [[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-  conditions = {Role = ["authenticated"]}
-
-[[redirects]]
   from = "/dashboard.html"
   to = "/index.html"
   status = 302
+  conditions = {}
