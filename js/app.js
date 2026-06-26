@@ -18,16 +18,33 @@ function setupUI(user) {
   const initial = email.charAt(0).toUpperCase();
   document.getElementById('user-email').textContent = email;
   document.getElementById('user-avatar').textContent = initial;
-  buildSidebar();
+
+  // Obtener roles del usuario (Netlify los guarda en app_metadata)
+  const roles = user.app_metadata?.roles || [];
+  buildSidebar(roles);
 }
 
-// ── Construir menú lateral ──────────────────────────────────────
-function buildSidebar() {
+// ── Construir menú filtrado por rol ─────────────────────────────
+function buildSidebar(userRoles) {
   const nav = document.getElementById('sidebar-nav');
   nav.innerHTML = '';
 
-  REPORTS_DATA.forEach(group => {
-    // Categoría
+  const esAdmin = userRoles.includes('admin');
+
+  // Filtrar solo las categorías que el usuario puede ver
+  const categoriasVisibles = REPORTS_DATA.filter(group =>
+    esAdmin || group.roles.some(r => userRoles.includes(r))
+  );
+
+  if (categoriasVisibles.length === 0) {
+    nav.innerHTML = `
+      <div style="padding:1.5rem 1.25rem;color:rgba(255,255,255,0.45);font-size:13px;line-height:1.5">
+        No tienes reportes asignados.<br>Contacta al administrador.
+      </div>`;
+    return;
+  }
+
+  categoriasVisibles.forEach((group, index) => {
     const section = document.createElement('div');
     section.className = 'nav-section';
 
@@ -40,13 +57,11 @@ function buildSidebar() {
       </span>
       <svg class="nav-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <polyline points="6 9 12 15 18 9"/>
-      </svg>
-    `;
+      </svg>`;
 
     const list = document.createElement('ul');
     list.className = 'nav-reports';
 
-    // Reportes dentro de la categoría
     group.reports.forEach(report => {
       const li = document.createElement('li');
       const btn = document.createElement('button');
@@ -61,7 +76,6 @@ function buildSidebar() {
       list.appendChild(li);
     });
 
-    // Toggle categoría
     header.addEventListener('click', () => {
       const isOpen = section.classList.toggle('open');
       list.style.maxHeight = isOpen ? list.scrollHeight + 'px' : '0';
@@ -72,7 +86,7 @@ function buildSidebar() {
     nav.appendChild(section);
 
     // Abrir primera categoría por defecto
-    if (nav.children.length === 1) {
+    if (index === 0) {
       section.classList.add('open');
       list.style.maxHeight = list.scrollHeight + 'px';
     }
@@ -81,7 +95,6 @@ function buildSidebar() {
 
 // ── Cargar reporte ──────────────────────────────────────────────
 function loadReport(btn) {
-  // Marcar activo
   document.querySelectorAll('.nav-report-item').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
 
@@ -94,7 +107,6 @@ function loadReport(btn) {
   document.getElementById('topbar-title').textContent = name;
   document.getElementById('report-iframe').src = url;
 
-  // Cerrar sidebar en móvil
   closeSidebar();
 }
 
