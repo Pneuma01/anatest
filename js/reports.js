@@ -44,6 +44,18 @@ const REPORTS_DATA = [
       }
     ]
   },
+    {
+    category: "SANA",
+    icon: "💰",
+    roles: ["sana", "admin"],
+    reports: [
+      {
+        id: "sana",
+        name: "Programa SANA",
+        url: "https://app.powerbi.com/view?r=eyJrIjoiZjcyMzFiYWMtZWNlNi00MzhhLWEyOWQtZDE3NTdhZWVlMDVjIiwidCI6ImM3ZGQ3YzhiLTk5YmYtNDdlOS1iNTlhLTgwNzE3MmQ5MTg0YSJ9"
+      }
+    ]
+  },
   {
     category: "Operaciones",
     icon: "⚙️",
