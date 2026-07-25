@@ -28,7 +28,7 @@ const REPORTS_DATA = [
       {
         id: "ventas-por-region",
         name: "Ventas por Región",
-        url: "https://app.powerbi.com/view?r=TU_LINK_AQUI"
+        url: "https://app.powerbi.com/view?r=eyJrIjoiMDNiNzZmY2ItNmYxNy00Zjk1LWJiZjQtZjY5YjhjZGMxMWM5IiwidCI6ImM3ZGQ3YzhiLTk5YmYtNDdlOS1iNTlhLTgwNzE3MmQ5MTg0YSJ9"
       }
     ]
   },
