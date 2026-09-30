@@ -40,7 +40,7 @@ const REPORTS_DATA = [
       {
         id: "los-tios",
         name: "Los Tíos",
-        url: "https://app.powerbi.com/view?r=eyJrIjoiMDI2YTczYmQtNTZlMS00MGMwLWFhMDItMDJkY2Y2Yzg1NjAxIiwidCI6ImM3ZGQ3YzhiLTk5YmYtNDdlOS1iNTlhLTgwNzE3MmQ5MTg0YSJ9"
+        url: "https://app.powerbi.com/view?r=eyJrIjoiNmI1MzU2MmQtZDkxMS00ODI4LThhOGYtNDIzNzlhNmI5ZDUyIiwidCI6ImM3ZGQ3YzhiLTk5YmYtNDdlOS1iNTlhLTgwNzE3MmQ5MTg0YSJ9"
       }
     ]
   },
